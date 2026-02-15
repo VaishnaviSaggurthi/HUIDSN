@@ -41,22 +41,22 @@ This project focuses on accessibility, natural interaction, and productivity by 
 ## 📸 Screenshots
 
 ### 🖐️ Full Hand Open Gesture
-![Full Hand Open](assests/fullhandopen.png)
+![Full Hand Open](assets/fullhandopen.png)
 
 ### ✊ Fist Gesture
-![Fist Gesture](assests/fist.png)
+![Fist Gesture](assets/fist.png)
 
 ### 📝 Annotation Mode
-![Annotation Mode](assests/annotations.png)
+![Annotation Mode](assets/annotations.png)
 
 ### 🖥️ System Tray Menu
-![Menu](assests/menu.png)
+![Menu](assets/menu.png)
 
 ### 🎤 Speech to Text and Audio
-![Speech to Text](assests/speechtotextandaudio.png)
+![Speech to Text](assets/speechtotextandaudio.png)
 
 ### 🎞️ PowerPoint Controls
-![PPT Controls](assests/pptkeys.png)
+![PPT Controls](assets/pptkeys.png)
 
 
 ## 🧠 Tech Stack
