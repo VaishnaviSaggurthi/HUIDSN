@@ -140,7 +140,7 @@ def mute_unMute(icon, item):
 def ppt_left_right(icon, item):
     global curr_selection
     curr_selection = "PPT Left/Right"
-    powerpoint_path = r"C:\Users\karth\OneDrive\Documents\online voting system.pptx"
+    powerpoint_path = r"C:/Users/vaish/Downloads/DOC-20240504-WA0007..pptx"
     os.startfile(powerpoint_path)
 
 def annotate(icon, item):
