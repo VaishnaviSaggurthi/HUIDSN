@@ -16,7 +16,7 @@ from pystray import MenuItem as item
 import datetime
 import speech_recognition as sr
 import math
-import google.generativeai as genai
+from google import genai
 import pyttsx3
 
 # Initialize MediaPipe and other global variables
@@ -71,11 +71,8 @@ c = wmi.WMI(namespace='wmi')
 
 # Set up the Google API Key for the Generative AI service
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=GOOGLE_API_KEY)
 print(os.getenv("GOOGLE_API_KEY"))
-# Initialize the model and chat session
-model = genai.GenerativeModel('gemini-1.5-flash')
-chat = model.start_chat(history=[])
+client = genai.Client(api_key=GOOGLE_API_KEY)
 
 
 
@@ -558,17 +555,17 @@ try:
 
                 try:
                     # Send message to the bot
-                    response_raw = chat.send_message(user_input)
+                    response = client.models.generate_content(
+                        model="gemini-2.5-flash",
+                        contents=user_input
+                    )
 
-                    # Debugging print to check the full response from the model
-                    print("Full response:", response_raw.text)
-                    read_text(response_raw.text)
-                    # Ensure response_raw is valid and contains text
-                    if response_raw and response_raw.text:
-                        # Strip whitespace and return the full response text
-                        response = response_raw.text.strip()
-                except:
-                    print("error")
+                    if response and response.text:
+                        print("Full response:", response.text)
+                        read_text(response.text)
+
+                except Exception as e:
+                    print("Error:", e)
 
 
 
